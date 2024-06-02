@@ -1,0 +1,39 @@
+{
+    "name": "venniepoints",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "pnpm build && node . VENNIE",
+        "build": "node build.mjs",
+        "test": "pnpm lint && pnpm testTypes",
+        "testTypes": "tsc --noEmit",
+        "lint": "eslint . --ext .js,.ts",
+        "lint:fix": "pnpm lint --fix",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "tsx ./src/migrate.ts"
+    },
+    "keywords": [],
+    "author": "lewisakura <lewi@lewisakura.moe>",
+    "dependencies": {
+        "better-sqlite3": "^11.0.0",
+        "dotenv": "^16.4.5",
+        "drizzle-orm": "^0.31.0",
+        "execa": "^8.0.1",
+        "oceanic.js": "1.10.4",
+        "pako": "^2.1.0"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.10",
+        "@types/node": "^20.12.7",
+        "@typescript-eslint/parser": "^7.7.0",
+        "drizzle-kit": "^0.22.1",
+        "esbuild": "^0.20.2",
+        "eslint": "^8.46.0",
+        "eslint-plugin-simple-import-sort": "^12.1.0",
+        "eslint-plugin-unused-imports": "^3.1.0",
+        "tslib": "^2.6.2",
+        "tsx": "^4.11.0",
+        "typescript": "^5.4.5"
+    }
+}
