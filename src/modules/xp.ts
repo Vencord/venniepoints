@@ -73,22 +73,10 @@ Vennie.on("messageCreate", async msg => {
             rewardsToBeIssued.push(roleId);
         }
 
-        let issuedRewards = "";
-
         if (rewardsToBeIssued.length > 0) {
             for (const roleId of rewardsToBeIssued) {
                 await msg.member.addRole(roleId, "level up!");
-                issuedRewards += `<@&${roleId}>\n`;
             }
         }
-
-        const replyMsg = await silently(
-            reply(msg,
-                `<:vennieflower:1216987042362298450> You levelled up! ${oldLevel} → **${newLevel}**${issuedRewards
-                    ? `\n\nYou have earned:\n${issuedRewards}`
-                    : ""}`)
-        );
-
-        setTimeout(() => replyMsg?.delete(), 5000);
     }
 });
