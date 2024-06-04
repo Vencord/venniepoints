@@ -9,8 +9,11 @@ import { getLevelForXp, getRequiredXpForNextLevel } from "../util/xpMath";
 defineCommand({
     name: "xp",
     description: "Get your XP",
+    guildOnly: true,
     usage: null,
     async execute(msg) {
+        if (msg.channelID !== "1024286218801926184") return; // BEGONE, NON BOT COMMANDS
+
         const xp = (db.select({ xp: users.xp })
             .from(users)
             .where(eq(users.id, msg.author.id))
