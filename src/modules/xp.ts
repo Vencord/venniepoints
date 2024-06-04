@@ -26,7 +26,7 @@ const eligibleChannels = new Set([
 
 const rewards = {
     10: "1136687385434918992",
-    20: "1026504932959977532"
+    //20: "1026504932959977532"
 } as const;
 
 const cooldowns: Record<string, number> = {};
